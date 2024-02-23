@@ -1,0 +1,25 @@
+dependencies {
+    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+}
+
+android{
+	packagingOptions {
+		pickFirst '**/libc++_shared.so'
+        pickFirst '**/libmodft2.so'
+        pickFirst '**/libmodpdfium.so'
+        pickFirst '**/libmodpng.so'
+	}
+}
+
+buildscript {
+  repositories {
+    mavenCentral()
+    jcenter()
+  }
+}
+
+repositories {
+  mavenCentral()
+  jcenter()
+}

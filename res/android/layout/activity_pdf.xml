@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_pdf"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PdfActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/pdf_layout_header"
+        android:layout_above="@+id/footerBar"
+        android:background="@color/white">
+        <com.github.barteksc.pdfviewer.PDFView
+            android:id="@+id/pdfView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/pdf_view_download_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/pdf_layout_header"
+        android:layout_above="@+id/footerBar"
+        android:background="@color/white"
+        android:visibility="gone">
+        <LinearLayout
+            android:background="@drawable/pdfviewer_custom_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#0fff"
+                android:textColor="#4d4d4d"
+                android:text="Ocorreu um erro a descarregar o documento, tente mais tarde."/>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/footerBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/warning_disabled_btns"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="testing message"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <Button android:id="@+id/btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@drawable/btn_selector"
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:text="button1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textAllCaps="false"
+                android:textColor="@color/btn_text"
+                android:textSize="15sp"
+                style="?android:attr/borderlessButtonStyle" />
+
+            <Button android:id="@+id/btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_selector"
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:text="button2"
+                android:layout_marginRight="16dp"
+                android:textAllCaps="false"
+                android:textColor="@color/btn_text"
+                android:textSize="15sp"
+                style="?android:attr/borderlessButtonStyle" />
+
+            <Button android:id="@+id/btn3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_selector"
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:text="button3"
+                android:layout_marginRight="16dp"
+                android:textAllCaps="false"
+                android:textColor="@color/btn_text"
+                android:textSize="15sp"
+                style="?android:attr/borderlessButtonStyle" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarLoadingFile"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/btn_cor_principal"
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/pdf_layout_header"
+        layout="@layout/modal_header"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

@@ -1,0 +1,33 @@
+{
+  "name": "cordova-plugin-pdf-reader",
+  "version": "2.6.5",
+  "description": "Open pdf in a webview",
+  "cordova": {
+    "id": "cordova-plugin-pdf-reader",
+    "platforms": [
+      "ios",
+      "android",
+      "wp8"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MobilidadeBPI/cordova-plugin-pdf-reader.git​​"
+  },
+  "keywords": [
+    "pdf",
+    "open",
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "BPI",
+  "license": "BPI"
+}
