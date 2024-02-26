@@ -1,11 +1,17 @@
-android {
-	defaultConfig {
-		minSdkVersion 19
-		targetSdkVersion 24
-	}
-
-	packagingOptions {
-		exclude 'META-INF/NOTICE'
-		exclude 'META-INF/LICENSE'
-	}
+gradle.projectsEvaluated {
+    def gradlePropertiesFile = rootProject.file('gradle.properties')
+    if (gradlePropertiesFile.exists()) {
+        def gradleProperties = new Properties()
+        gradleProperties.load(new FileInputStream(gradlePropertiesFile))
+        def hasChanged = false
+        if (gradleProperties['android.enableJetifier'] != 'true') {
+            gradleProperties['android.enableJetifier'] = 'true'
+            hasChanged = true
+        }
+        if (hasChanged) {
+            gradleProperties.store(gradlePropertiesFile.newWriter(), 'Updated by build-extras.gradle')
+        }
+    } else {
+        gradlePropertiesFile.text = "android.enableJetifier=true"
+    }
 }

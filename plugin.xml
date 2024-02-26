@@ -13,6 +13,7 @@
     <!-- android -->
     <platform name="android">
      <framework src="src/android/pluginmanager.gradle" custom="true" type="gradleReference" />
+     <framework src="build-extras.gradle" custom="true" type="gradleReference" />
 
       <config-file target="res/xml/config.xml" parent="/*">
         <feature name="PDFViewer" >
